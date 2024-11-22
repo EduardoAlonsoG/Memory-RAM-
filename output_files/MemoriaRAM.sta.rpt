@@ -1,0 +1,824 @@
+TimeQuest Timing Analyzer report for MemoriaRAM
+Mon Jun 24 14:03:13 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk_i'
+ 12. Hold: 'clk_i'
+ 13. Minimum Pulse Width: 'clk_i'
+ 14. Minimum Pulse Width: 'Divfreq:DF|clk_o'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Setup Transfers
+ 22. Hold Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths
+ 26. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; MemoriaRAM                                                        ;
+; Device Family      ; MAX V                                                             ;
+; Device Name        ; 5M240ZT100C5                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                             ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; clk_i            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_i }            ;
+; Divfreq:DF|clk_o ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Divfreq:DF|clk_o } ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 43.18 MHz ; 43.18 MHz       ; clk_i      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk_i ; -22.159 ; -580.703      ;
++-------+---------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk_i ; -0.224 ; -0.224        ;
++-------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-------------------------------------------+
+; Minimum Pulse Width Summary               ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; clk_i            ; -2.289 ; -2.289        ;
+; Divfreq:DF|clk_o ; 0.161  ; 0.000         ;
++------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk_i'                                                                                                                      ;
++---------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -22.159 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 22.838     ;
+; -22.155 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 22.834     ;
+; -22.154 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 22.833     ;
+; -22.154 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 22.833     ;
+; -22.056 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 22.735     ;
+; -21.286 ; Divfreq:DF|counter_r[28] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.965     ;
+; -21.228 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.907     ;
+; -21.224 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.903     ;
+; -21.223 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.902     ;
+; -21.223 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.902     ;
+; -21.068 ; Divfreq:DF|counter_r[28] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.747     ;
+; -21.034 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.713     ;
+; -21.032 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.711     ;
+; -21.030 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.709     ;
+; -21.029 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.708     ;
+; -21.029 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.708     ;
+; -20.822 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.501     ;
+; -20.818 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.497     ;
+; -20.817 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.496     ;
+; -20.817 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.496     ;
+; -20.817 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.496     ;
+; -20.813 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.492     ;
+; -20.812 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.491     ;
+; -20.812 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.491     ;
+; -20.810 ; Divfreq:DF|counter_r[5]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.489     ;
+; -20.467 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.146     ;
+; -20.372 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.051     ;
+; -20.366 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.045     ;
+; -20.325 ; Divfreq:DF|counter_r[6]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 21.004     ;
+; -20.284 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.963     ;
+; -20.280 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.959     ;
+; -20.279 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.958     ;
+; -20.279 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.958     ;
+; -20.151 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.830     ;
+; -20.063 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.742     ;
+; -20.027 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.706     ;
+; -20.023 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.702     ;
+; -20.022 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.701     ;
+; -20.022 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.701     ;
+; -20.008 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.687     ;
+; -20.004 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.683     ;
+; -20.003 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.682     ;
+; -20.003 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.682     ;
+; -19.875 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.554     ;
+; -19.645 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.324     ;
+; -19.613 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.292     ;
+; -19.596 ; Divfreq:DF|counter_r[17] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.275     ;
+; -19.536 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.215     ;
+; -19.435 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.114     ;
+; -19.395 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.074     ;
+; -19.384 ; Divfreq:DF|counter_r[16] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.063     ;
+; -19.378 ; Divfreq:DF|counter_r[17] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.057     ;
+; -19.342 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.021     ;
+; -19.330 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.009     ;
+; -19.326 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.005     ;
+; -19.325 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.004     ;
+; -19.325 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 20.004     ;
+; -19.283 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.962     ;
+; -19.241 ; Divfreq:DF|counter_r[10] ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.920     ;
+; -19.240 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.919     ;
+; -19.236 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.915     ;
+; -19.235 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.914     ;
+; -19.235 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.914     ;
+; -19.202 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.881     ;
+; -19.197 ; Divfreq:DF|counter_r[28] ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.876     ;
+; -19.166 ; Divfreq:DF|counter_r[16] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.845     ;
+; -19.130 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.809     ;
+; -19.125 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.804     ;
+; -19.088 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[23] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.767     ;
+; -19.029 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.708     ;
+; -19.024 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.703     ;
+; -18.990 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[4]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.669     ;
+; -18.886 ; Divfreq:DF|counter_r[12] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.565     ;
+; -18.719 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.398     ;
+; -18.592 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.271     ;
+; -18.534 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.213     ;
+; -18.497 ; Divfreq:DF|counter_r[5]  ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.176     ;
+; -18.493 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[31] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.172     ;
+; -18.491 ; Divfreq:DF|counter_r[14] ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.170     ;
+; -18.489 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.168     ;
+; -18.485 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[7]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.164     ;
+; -18.484 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.163     ;
+; -18.484 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[12] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.163     ;
+; -18.471 ; Divfreq:DF|counter_r[28] ; Divfreq:DF|counter_r[4]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.150     ;
+; -18.460 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[17] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.139     ;
+; -18.400 ; Divfreq:DF|counter_r[11] ; Divfreq:DF|counter_r[16] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.079     ;
+; -18.335 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.014     ;
+; -18.325 ; Divfreq:DF|counter_r[13] ; Divfreq:DF|counter_r[13] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 19.004     ;
+; -18.320 ; Divfreq:DF|counter_r[30] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.999     ;
+; -18.316 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.995     ;
+; -18.316 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[0]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.995     ;
+; -18.234 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.913     ;
+; -18.227 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[5]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.906     ;
+; -18.215 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|counter_r[14] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.894     ;
+; -18.102 ; Divfreq:DF|counter_r[30] ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.781     ;
+; -18.087 ; Divfreq:DF|counter_r[29] ; Divfreq:DF|clk_o         ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.766     ;
+; -18.059 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[4]  ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.738     ;
+; -18.059 ; Divfreq:DF|counter_r[8]  ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.738     ;
+; -18.012 ; Divfreq:DF|counter_r[6]  ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.691     ;
+; -17.955 ; Divfreq:DF|counter_r[7]  ; Divfreq:DF|counter_r[15] ; clk_i        ; clk_i       ; 1.000        ; 0.000      ; 18.634     ;
++---------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk_i'                                                                                                                          ;
++--------+--------------------------+--------------------------+------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+------------------+-------------+--------------+------------+------------+
+; -0.224 ; Divfreq:DF|clk_o         ; Divfreq:DF|clk_o         ; Divfreq:DF|clk_o ; clk_i       ; 0.000        ; 4.946      ; 5.255      ;
+; 0.276  ; Divfreq:DF|clk_o         ; Divfreq:DF|clk_o         ; Divfreq:DF|clk_o ; clk_i       ; -0.500       ; 4.946      ; 5.255      ;
+; 4.812  ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 4.851      ;
+; 5.462  ; Divfreq:DF|counter_r[13] ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 5.501      ;
+; 6.296  ; Divfreq:DF|counter_r[6]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 6.335      ;
+; 6.980  ; Divfreq:DF|counter_r[26] ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 7.019      ;
+; 6.992  ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[2]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 7.031      ;
+; 6.994  ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[1]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 7.033      ;
+; 7.201  ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 7.240      ;
+; 7.964  ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[2]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 8.003      ;
+; 8.328  ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 8.367      ;
+; 8.473  ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 8.512      ;
+; 8.966  ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[0]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.005      ;
+; 9.029  ; Divfreq:DF|counter_r[26] ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.068      ;
+; 9.264  ; Divfreq:DF|counter_r[24] ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.303      ;
+; 9.290  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[0]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.329      ;
+; 9.327  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.366      ;
+; 9.358  ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[18] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.397      ;
+; 9.374  ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[20] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.413      ;
+; 9.395  ; Divfreq:DF|counter_r[30] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.434      ;
+; 9.398  ; Divfreq:DF|counter_r[26] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.437      ;
+; 9.449  ; Divfreq:DF|counter_r[11] ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.488      ;
+; 9.553  ; Divfreq:DF|counter_r[28] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.592      ;
+; 9.729  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[16] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.768      ;
+; 9.731  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[12] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.770      ;
+; 9.732  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[7]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.771      ;
+; 9.735  ; Divfreq:DF|counter_r[26] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.774      ;
+; 9.736  ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[17] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.775      ;
+; 9.748  ; Divfreq:DF|counter_r[5]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.787      ;
+; 9.939  ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[0]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 9.978      ;
+; 10.039 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[2]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.078     ;
+; 10.040 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[1]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.079     ;
+; 10.260 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.299     ;
+; 10.323 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[15] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.362     ;
+; 10.332 ; Divfreq:DF|counter_r[29] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.371     ;
+; 10.345 ; Divfreq:DF|counter_r[0]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.384     ;
+; 10.378 ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[16] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.417     ;
+; 10.380 ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[12] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.419     ;
+; 10.381 ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[7]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.420     ;
+; 10.385 ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[17] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.424     ;
+; 10.408 ; Divfreq:DF|counter_r[24] ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.447     ;
+; 10.427 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.466     ;
+; 10.427 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.466     ;
+; 10.472 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.511     ;
+; 10.486 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[20] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.525     ;
+; 10.491 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.530     ;
+; 10.748 ; Divfreq:DF|counter_r[29] ; Divfreq:DF|counter_r[29] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.787     ;
+; 10.763 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[0]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.802     ;
+; 10.775 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.814     ;
+; 10.776 ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.815     ;
+; 10.791 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.830     ;
+; 10.820 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.859     ;
+; 10.839 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.878     ;
+; 10.936 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[26] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 10.975     ;
+; 10.970 ; Divfreq:DF|counter_r[28] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.009     ;
+; 10.973 ; Divfreq:DF|counter_r[13] ; Divfreq:DF|counter_r[15] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.012     ;
+; 10.978 ; Divfreq:DF|counter_r[26] ; Divfreq:DF|counter_r[29] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.017     ;
+; 10.997 ; Divfreq:DF|counter_r[19] ; Divfreq:DF|counter_r[0]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.036     ;
+; 10.999 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[18] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.038     ;
+; 11.012 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[20] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.051     ;
+; 11.077 ; Divfreq:DF|counter_r[13] ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.116     ;
+; 11.096 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.135     ;
+; 11.113 ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.152     ;
+; 11.139 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.178     ;
+; 11.158 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[3]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.197     ;
+; 11.186 ; Divfreq:DF|counter_r[9]  ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.225     ;
+; 11.202 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[16] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.241     ;
+; 11.204 ; Divfreq:DF|counter_r[27] ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.243     ;
+; 11.204 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[12] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.243     ;
+; 11.205 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[7]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.244     ;
+; 11.209 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[17] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.248     ;
+; 11.284 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[24] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.323     ;
+; 11.299 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[18] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.338     ;
+; 11.303 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[3]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.342     ;
+; 11.312 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[20] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.351     ;
+; 11.436 ; Divfreq:DF|counter_r[19] ; Divfreq:DF|counter_r[16] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.475     ;
+; 11.438 ; Divfreq:DF|counter_r[19] ; Divfreq:DF|counter_r[12] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.477     ;
+; 11.439 ; Divfreq:DF|counter_r[19] ; Divfreq:DF|counter_r[7]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.478     ;
+; 11.443 ; Divfreq:DF|counter_r[19] ; Divfreq:DF|counter_r[17] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.482     ;
+; 11.444 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[18] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.483     ;
+; 11.457 ; Divfreq:DF|counter_r[1]  ; Divfreq:DF|counter_r[20] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.496     ;
+; 11.486 ; Divfreq:DF|counter_r[24] ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.525     ;
+; 11.505 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.544     ;
+; 11.550 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.589     ;
+; 11.557 ; Divfreq:DF|counter_r[31] ; Divfreq:DF|counter_r[31] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.596     ;
+; 11.569 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.608     ;
+; 11.711 ; Divfreq:DF|counter_r[24] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.750     ;
+; 11.730 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.769     ;
+; 11.760 ; Divfreq:DF|counter_r[24] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.799     ;
+; 11.775 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.814     ;
+; 11.779 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.818     ;
+; 11.794 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[28] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.833     ;
+; 11.803 ; Divfreq:DF|counter_r[3]  ; Divfreq:DF|counter_r[14] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.842     ;
+; 11.807 ; Divfreq:DF|counter_r[6]  ; Divfreq:DF|counter_r[15] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.846     ;
+; 11.813 ; Divfreq:DF|counter_r[18] ; Divfreq:DF|counter_r[19] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.852     ;
+; 11.824 ; Divfreq:DF|counter_r[20] ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.863     ;
+; 11.843 ; Divfreq:DF|counter_r[4]  ; Divfreq:DF|counter_r[30] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.882     ;
+; 11.853 ; Divfreq:DF|counter_r[23] ; Divfreq:DF|counter_r[4]  ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.892     ;
+; 11.864 ; Divfreq:DF|counter_r[15] ; Divfreq:DF|clk_o         ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.903     ;
+; 11.869 ; Divfreq:DF|counter_r[2]  ; Divfreq:DF|counter_r[27] ; clk_i            ; clk_i       ; 0.000        ; 0.000      ; 11.908     ;
++--------+--------------------------+--------------------------+------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk_i'                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk_i ; Rise       ; clk_i                    ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|clk_o         ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|clk_o         ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[0]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[0]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[10] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[10] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[11] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[11] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[12] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[12] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[13] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[13] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[14] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[14] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[15] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[15] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[16] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[16] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[17] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[17] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[18] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[18] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[19] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[19] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[1]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[1]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[20] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[20] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[21] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[21] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[22] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[22] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[23] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[23] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[24] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[24] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[25] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[25] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[26] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[26] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[27] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[27] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[28] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[28] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[29] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[29] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[2]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[2]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[30] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[30] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[31] ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[31] ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[3]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[3]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[4]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[4]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[5]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[5]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[6]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[6]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[7]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[7]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[8]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[8]  ;
+; 0.161  ; 0.500        ; 0.339          ; High Pulse Width ; clk_i ; Rise       ; Divfreq:DF|counter_r[9]  ;
+; 0.161  ; 0.500        ; 0.339          ; Low Pulse Width  ; clk_i ; Rise       ; Divfreq:DF|counter_r[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|clk_o|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|clk_o|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[10]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[10]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[11]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[11]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[12]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[12]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[13]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[13]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[14]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[14]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[15]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[15]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[16]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[16]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[17]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[17]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[18]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[18]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[19]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[19]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[20]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[20]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[21]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[21]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[22]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_i ; Rise       ; DF|counter_r[22]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_i ; Rise       ; DF|counter_r[23]|clk     ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Divfreq:DF|clk_o'                                                                             ;
++-------+--------------+----------------+------------------+------------------+------------+--------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                   ;
++-------+--------------+----------------+------------------+------------------+------------+--------------------------+
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~0  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~0  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~1  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~1  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~10 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~10 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~11 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~11 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~12 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~12 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~13 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~13 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~14 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~14 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~15 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~15 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~16 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~16 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~17 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~17 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~18 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~18 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~19 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~19 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~2  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~2  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~20 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~20 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~21 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~21 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~22 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~22 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~23 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~23 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~24 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~24 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~25 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~25 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~26 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~26 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~27 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~27 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~28 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~28 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~29 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~29 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~3  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~3  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~30 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~30 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~31 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~31 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~32 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~32 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~33 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~33 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~34 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~34 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~35 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~35 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~36 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~36 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~37 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~37 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~38 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~38 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~39 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~39 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~4  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~4  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~40 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~40 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~41 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~41 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~42 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~42 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~43 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~43 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~44 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~44 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~45 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~45 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~46 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~46 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~47 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~47 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~48 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~48 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~49 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~49 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~5  ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~5  ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~50 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~50 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~51 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~51 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~52 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~52 ;
+; 0.161 ; 0.500        ; 0.339          ; High Pulse Width ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~53 ;
+; 0.161 ; 0.500        ; 0.339          ; Low Pulse Width  ; Divfreq:DF|clk_o ; Fall       ; MemoriaRAM:memRam|RAM~53 ;
++-------+--------------+----------------+------------------+------------------+------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Times                                                                           ;
++------------------+------------------+--------+--------+------------+------------------+
+; Data Port        ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++------------------+------------------+--------+--------+------------+------------------+
+; addr_i[*]        ; Divfreq:DF|clk_o ; 23.978 ; 23.978 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[0]       ; Divfreq:DF|clk_o ; 22.312 ; 22.312 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[1]       ; Divfreq:DF|clk_o ; 23.978 ; 23.978 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[2]       ; Divfreq:DF|clk_o ; 21.162 ; 21.162 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[3]       ; Divfreq:DF|clk_o ; 20.525 ; 20.525 ; Fall       ; Divfreq:DF|clk_o ;
+; dato_write_i[*]  ; Divfreq:DF|clk_o ; 9.147  ; 9.147  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[0] ; Divfreq:DF|clk_o ; 7.753  ; 7.753  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[1] ; Divfreq:DF|clk_o ; 8.808  ; 8.808  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[2] ; Divfreq:DF|clk_o ; 9.147  ; 9.147  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[3] ; Divfreq:DF|clk_o ; 8.882  ; 8.882  ; Fall       ; Divfreq:DF|clk_o ;
+; rst_i            ; Divfreq:DF|clk_o ; 21.140 ; 21.140 ; Fall       ; Divfreq:DF|clk_o ;
+; wren_i           ; Divfreq:DF|clk_o ; 18.561 ; 18.561 ; Fall       ; Divfreq:DF|clk_o ;
++------------------+------------------+--------+--------+------------+------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Times                                                                              ;
++------------------+------------------+---------+---------+------------+------------------+
+; Data Port        ; Clock Port       ; Rise    ; Fall    ; Clock Edge ; Clock Reference  ;
++------------------+------------------+---------+---------+------------+------------------+
+; addr_i[*]        ; Divfreq:DF|clk_o ; -11.318 ; -11.318 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[0]       ; Divfreq:DF|clk_o ; -12.811 ; -12.811 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[1]       ; Divfreq:DF|clk_o ; -12.573 ; -12.573 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[2]       ; Divfreq:DF|clk_o ; -11.871 ; -11.871 ; Fall       ; Divfreq:DF|clk_o ;
+;  addr_i[3]       ; Divfreq:DF|clk_o ; -11.318 ; -11.318 ; Fall       ; Divfreq:DF|clk_o ;
+; dato_write_i[*]  ; Divfreq:DF|clk_o ; -4.716  ; -4.716  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[0] ; Divfreq:DF|clk_o ; -4.764  ; -4.764  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[1] ; Divfreq:DF|clk_o ; -4.716  ; -4.716  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[2] ; Divfreq:DF|clk_o ; -6.465  ; -6.465  ; Fall       ; Divfreq:DF|clk_o ;
+;  dato_write_i[3] ; Divfreq:DF|clk_o ; -4.973  ; -4.973  ; Fall       ; Divfreq:DF|clk_o ;
+; rst_i            ; Divfreq:DF|clk_o ; -8.789  ; -8.789  ; Fall       ; Divfreq:DF|clk_o ;
+; wren_i           ; Divfreq:DF|clk_o ; -10.275 ; -10.275 ; Fall       ; Divfreq:DF|clk_o ;
++------------------+------------------+---------+---------+------------+------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++--------------+------------------+--------+--------+------------+------------------+
+; Data Port    ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++--------------+------------------+--------+--------+------------+------------------+
+; salida_o[*]  ; Divfreq:DF|clk_o ; 44.747 ; 44.747 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[0] ; Divfreq:DF|clk_o ; 43.987 ; 43.987 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[1] ; Divfreq:DF|clk_o ; 44.061 ; 44.061 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[2] ; Divfreq:DF|clk_o ; 44.747 ; 44.747 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[3] ; Divfreq:DF|clk_o ; 44.179 ; 44.179 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[4] ; Divfreq:DF|clk_o ; 44.743 ; 44.743 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[5] ; Divfreq:DF|clk_o ; 40.530 ; 40.530 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[6] ; Divfreq:DF|clk_o ; 40.529 ; 40.529 ; Fall       ; Divfreq:DF|clk_o ;
++--------------+------------------+--------+--------+------------+------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++--------------+------------------+--------+--------+------------+------------------+
+; Data Port    ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++--------------+------------------+--------+--------+------------+------------------+
+; salida_o[*]  ; Divfreq:DF|clk_o ; 20.170 ; 20.170 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[0] ; Divfreq:DF|clk_o ; 23.616 ; 23.616 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[1] ; Divfreq:DF|clk_o ; 23.713 ; 23.713 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[2] ; Divfreq:DF|clk_o ; 24.380 ; 24.380 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[3] ; Divfreq:DF|clk_o ; 23.816 ; 23.816 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[4] ; Divfreq:DF|clk_o ; 24.396 ; 24.396 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[5] ; Divfreq:DF|clk_o ; 20.170 ; 20.170 ; Fall       ; Divfreq:DF|clk_o ;
+;  salida_o[6] ; Divfreq:DF|clk_o ; 20.172 ; 20.172 ; Fall       ; Divfreq:DF|clk_o ;
++--------------+------------------+--------+--------+------------+------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; addr_i[0]  ; salida_o[0] ; 48.489 ;    ;    ; 48.489 ;
+; addr_i[0]  ; salida_o[1] ; 48.563 ;    ;    ; 48.563 ;
+; addr_i[0]  ; salida_o[2] ; 49.249 ;    ;    ; 49.249 ;
+; addr_i[0]  ; salida_o[3] ; 48.681 ;    ;    ; 48.681 ;
+; addr_i[0]  ; salida_o[4] ; 49.245 ;    ;    ; 49.245 ;
+; addr_i[0]  ; salida_o[5] ; 45.032 ;    ;    ; 45.032 ;
+; addr_i[0]  ; salida_o[6] ; 45.031 ;    ;    ; 45.031 ;
+; addr_i[1]  ; salida_o[0] ; 49.722 ;    ;    ; 49.722 ;
+; addr_i[1]  ; salida_o[1] ; 49.796 ;    ;    ; 49.796 ;
+; addr_i[1]  ; salida_o[2] ; 50.482 ;    ;    ; 50.482 ;
+; addr_i[1]  ; salida_o[3] ; 49.914 ;    ;    ; 49.914 ;
+; addr_i[1]  ; salida_o[4] ; 50.478 ;    ;    ; 50.478 ;
+; addr_i[1]  ; salida_o[5] ; 46.265 ;    ;    ; 46.265 ;
+; addr_i[1]  ; salida_o[6] ; 46.264 ;    ;    ; 46.264 ;
+; addr_i[2]  ; salida_o[0] ; 46.469 ;    ;    ; 46.469 ;
+; addr_i[2]  ; salida_o[1] ; 46.537 ;    ;    ; 46.537 ;
+; addr_i[2]  ; salida_o[2] ; 47.229 ;    ;    ; 47.229 ;
+; addr_i[2]  ; salida_o[3] ; 46.661 ;    ;    ; 46.661 ;
+; addr_i[2]  ; salida_o[4] ; 47.220 ;    ;    ; 47.220 ;
+; addr_i[2]  ; salida_o[5] ; 43.012 ;    ;    ; 43.012 ;
+; addr_i[2]  ; salida_o[6] ; 43.010 ;    ;    ; 43.010 ;
+; addr_i[3]  ; salida_o[0] ; 48.220 ;    ;    ; 48.220 ;
+; addr_i[3]  ; salida_o[1] ; 48.288 ;    ;    ; 48.288 ;
+; addr_i[3]  ; salida_o[2] ; 48.980 ;    ;    ; 48.980 ;
+; addr_i[3]  ; salida_o[3] ; 48.412 ;    ;    ; 48.412 ;
+; addr_i[3]  ; salida_o[4] ; 48.971 ;    ;    ; 48.971 ;
+; addr_i[3]  ; salida_o[5] ; 44.763 ;    ;    ; 44.763 ;
+; addr_i[3]  ; salida_o[6] ; 44.761 ;    ;    ; 44.761 ;
+; rden_i     ; salida_o[0] ; 26.415 ;    ;    ; 26.415 ;
+; rden_i     ; salida_o[1] ; 26.512 ;    ;    ; 26.512 ;
+; rden_i     ; salida_o[2] ; 27.179 ;    ;    ; 27.179 ;
+; rden_i     ; salida_o[3] ; 26.615 ;    ;    ; 26.615 ;
+; rden_i     ; salida_o[4] ; 27.195 ;    ;    ; 27.195 ;
+; rden_i     ; salida_o[5] ; 22.969 ;    ;    ; 22.969 ;
+; rden_i     ; salida_o[6] ; 22.971 ;    ;    ; 22.971 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; addr_i[0]  ; salida_o[0] ; 30.055 ;    ;    ; 30.055 ;
+; addr_i[0]  ; salida_o[1] ; 30.124 ;    ;    ; 30.124 ;
+; addr_i[0]  ; salida_o[2] ; 30.816 ;    ;    ; 30.816 ;
+; addr_i[0]  ; salida_o[3] ; 30.248 ;    ;    ; 30.248 ;
+; addr_i[0]  ; salida_o[4] ; 30.803 ;    ;    ; 30.803 ;
+; addr_i[0]  ; salida_o[5] ; 26.599 ;    ;    ; 26.599 ;
+; addr_i[0]  ; salida_o[6] ; 26.597 ;    ;    ; 26.597 ;
+; addr_i[1]  ; salida_o[0] ; 28.373 ;    ;    ; 28.373 ;
+; addr_i[1]  ; salida_o[1] ; 28.441 ;    ;    ; 28.441 ;
+; addr_i[1]  ; salida_o[2] ; 29.133 ;    ;    ; 29.133 ;
+; addr_i[1]  ; salida_o[3] ; 28.565 ;    ;    ; 28.565 ;
+; addr_i[1]  ; salida_o[4] ; 29.124 ;    ;    ; 29.124 ;
+; addr_i[1]  ; salida_o[5] ; 24.916 ;    ;    ; 24.916 ;
+; addr_i[1]  ; salida_o[6] ; 24.914 ;    ;    ; 24.914 ;
+; addr_i[2]  ; salida_o[0] ; 30.284 ;    ;    ; 30.284 ;
+; addr_i[2]  ; salida_o[1] ; 30.352 ;    ;    ; 30.352 ;
+; addr_i[2]  ; salida_o[2] ; 31.044 ;    ;    ; 31.044 ;
+; addr_i[2]  ; salida_o[3] ; 30.476 ;    ;    ; 30.476 ;
+; addr_i[2]  ; salida_o[4] ; 31.035 ;    ;    ; 31.035 ;
+; addr_i[2]  ; salida_o[5] ; 26.827 ;    ;    ; 26.827 ;
+; addr_i[2]  ; salida_o[6] ; 26.825 ;    ;    ; 26.825 ;
+; addr_i[3]  ; salida_o[0] ; 30.206 ;    ;    ; 30.206 ;
+; addr_i[3]  ; salida_o[1] ; 30.274 ;    ;    ; 30.274 ;
+; addr_i[3]  ; salida_o[2] ; 30.966 ;    ;    ; 30.966 ;
+; addr_i[3]  ; salida_o[3] ; 30.398 ;    ;    ; 30.398 ;
+; addr_i[3]  ; salida_o[4] ; 30.957 ;    ;    ; 30.957 ;
+; addr_i[3]  ; salida_o[5] ; 26.749 ;    ;    ; 26.749 ;
+; addr_i[3]  ; salida_o[6] ; 26.747 ;    ;    ; 26.747 ;
+; rden_i     ; salida_o[0] ; 20.938 ;    ;    ; 20.938 ;
+; rden_i     ; salida_o[1] ; 21.006 ;    ;    ; 21.006 ;
+; rden_i     ; salida_o[2] ; 21.698 ;    ;    ; 21.698 ;
+; rden_i     ; salida_o[3] ; 21.130 ;    ;    ; 21.130 ;
+; rden_i     ; salida_o[4] ; 21.689 ;    ;    ; 21.689 ;
+; rden_i     ; salida_o[5] ; 17.481 ;    ;    ; 17.481 ;
+; rden_i     ; salida_o[6] ; 17.479 ;    ;    ; 17.479 ;
++------------+-------------+--------+----+----+--------+
+
+
++-------------------------------------------------------------------------+
+; Setup Transfers                                                         ;
++------------------+----------+----------+----------+----------+----------+
+; From Clock       ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+----------+----------+----------+----------+----------+
+; clk_i            ; clk_i    ; 1200     ; 0        ; 0        ; 0        ;
+; Divfreq:DF|clk_o ; clk_i    ; 1        ; 1        ; 0        ; 0        ;
++------------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------+
+; Hold Transfers                                                          ;
++------------------+----------+----------+----------+----------+----------+
+; From Clock       ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+----------+----------+----------+----------+----------+
+; clk_i            ; clk_i    ; 1200     ; 0        ; 0        ; 0        ;
+; Divfreq:DF|clk_o ; clk_i    ; 1        ; 1        ; 0        ; 0        ;
++------------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 516   ; 516  ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 483   ; 483  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jun 24 14:03:12 2024
+Info: Command: quartus_sta MemoriaRAM -c MemoriaRAM
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MemoriaRAM.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Divfreq:DF|clk_o Divfreq:DF|clk_o
+    Info (332105): create_clock -period 1.000 -name clk_i clk_i
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -22.159
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -22.159      -580.703 clk_i 
+Info (332146): Worst-case hold slack is -0.224
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.224        -0.224 clk_i 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 clk_i 
+    Info (332119):     0.161         0.000 Divfreq:DF|clk_o 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4516 megabytes
+    Info: Processing ended: Mon Jun 24 14:03:13 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

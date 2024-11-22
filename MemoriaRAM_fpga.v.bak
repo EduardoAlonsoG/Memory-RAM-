@@ -1,0 +1,9 @@
+/*
+	encabezado
+*/
+
+module MemoriaRAM_fpga(
+	
+);
+
+endmodule
